@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-bool isvalid(int arr[9][9], int i, int j, int num) {
+bool isvalid(int arr[9][9], int i, int j, int num) {//i represents row and j represents column
     for (int x = 0; x < 9; x++) {
         if (arr[i][x] == num || arr[x][j] == num) {
             return false;
