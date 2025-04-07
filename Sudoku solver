@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+bool isvalid(int arr[9][9], int i, int j, int num) {
+    for (int x = 0; x < 9; x++) {
+        if (arr[i][x] == num || arr[x][j] == num) {
+            return false;
+        }
+    }
+    int startRow = i - (i % 3);
+    int startCol = j - (j % 3);
+    for (int a = 0; a < 3; a++) {
+        for (int b = 0; b < 3; b++) {
+            if (arr[startRow + a][startCol + b] == num) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+bool sudokusolver(int arr[9][9]) {
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            if (arr[i][j] == 0) {
+                for (int num = 1; num <= 9; num++) {
+                    if (isvalid(arr, i, j, num)) {
+                        arr[i][j] = num;
+                        if (sudokusolver(arr)) {
+                            return true;
+                        }
+                        arr[i][j] = 0; 
+                    }
+                }
+                return false; 
+            }
+        }
+    }
+    return true; 
+}
+void printBoard(int arr[9][9]) {
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+int main() {
+    int arr[9][9] = {
+        {5,3,0,0,7,0,0,0,0},
+        {6,0,0,1,9,5,0,0,0},
+        {0,9,8,0,0,0,0,6,0},
+        {8,0,0,0,6,0,0,0,3},
+        {4,0,0,8,0,3,0,0,1},
+        {7,0,0,0,2,0,0,0,6},
+        {0,6,0,0,0,0,2,8,0},
+        {0,0,0,4,1,9,0,0,5},
+        {0,0,0,0,8,0,0,7,9}
+    };
+    if (sudokusolver(arr)) {
+        cout << "Solved Sudoku Board:\n";
+        printBoard(arr);
+    } else {
+        cout << "No solution exists.\n";
+    }
+    return 0;
+}
