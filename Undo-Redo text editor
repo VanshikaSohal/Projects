@@ -51,29 +51,45 @@ void redo() {
 void showText() {
     cout << "\nCurrent Text: " << currentText << "\n";
 }
+void showMenu() {
+    cout << "\n--- Text Editor Menu ---\n";
+    cout << "1. Add Text\n";
+    cout << "2. Undo\n";
+    cout << "3. Redo\n";
+    cout << "4. Delete Text\n";
+    cout << "5. Show Current Text\n";
+    cout << "6. Exit\n";
+}
+
 int main() {
     int choice;
     while (true) {
-        cout << "\n====== Undo-Redo Text Editor ======\n";
-        cout << "1. Add Text\n";
-        cout << "2. Delete Last N Characters\n";
-        cout << "3. Undo\n";
-        cout << "4. Redo\n";
-        cout << "5. Show Current Text\n";
-        cout << "6. Exit\n";
-        cout << "Enter your choice(number in the front of the choice): ";
+        showMenu();
+        cout << "Enter your choice: ";
         cin >> choice;
+        
         switch (choice) {
-            case 1: addText(); break;
-            case 2: deleteText(); break;
-            case 3: undo(); break;
-            case 4: redo(); break;
-            case 5: showText(); break;
+            case 1:
+                addText();
+                break;
+            case 2:
+                undo();
+                break;
+            case 3:
+                redo();
+                break;
+            case 4:
+                deleteText();
+                break;
+            case 5:
+                cout << "Current Text: " << currentText << endl;
+                break;
             case 6:
-                cout << "Exiting editor. Goodbye!\n";
+                cout << "Exiting the program...\n";
                 return 0;
             default:
-                cout << "Invalid choice. Try again.\n";
+                cout << "Invalid choice, please try again.\n";
         }
     }
+    return 0;
 }
