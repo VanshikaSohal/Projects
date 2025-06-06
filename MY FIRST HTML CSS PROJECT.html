@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Techfest2025
+    </title>
+</head>
+<style>
+    .body{
+        background-color: rgb(198, 46, 229);
+        font-family: Arial, Helvetica, sans-serif;
+        margin:0px;
+        padding:0px;
+        box-sizing:border-box;
+    }
+    .blue{
+        width:100%;/*just making blue line fit to complete screen*/
+        height:10px;
+        background-color: blue;
+        margin-bottom: 50px;
+        border-radius: 2px;
+    }
+    .button{
+        display:flex;
+        align-content: center;
+        justify-content:center;
+        margin-top: 30px;
+    }
+    .register{
+        width:200px;
+        height:20px;
+        display: flex;
+        background-color: aquamarine;
+        border-radius: 2px;
+        align-content:center;
+        justify-content: center;
+        border:1px solid black ;
+        transition-duration: 0.4s;
+        transition-property: all;
+        transition-delay: 0s;
+        transition-timing-function: ease-in-out ;
+        margin-bottom:5px;
+       }
+       .register:hover{
+            height:30px;
+            width:160px;
+            background-color:red;
+        }
+        .register:active{
+            height:30px;
+            width:160px;
+            background-color:blue;
+        }
+        .mainsection{
+            display:flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap:0px;
+            margin-top:50px;
+            margin-left: 0px;
+        }
+        .grid{
+           grid-template-columns: 200px 200px;
+           grid-template-rows: 200px 200px;
+           justify-content: space-around ;
+           display:grid;
+           padding:20px;
+           margin-left: 0px;
+           margin-right: 10px;
+        }
+        .grid div{
+            justify-content: center;
+            display: flex;
+            border: 10px solid black;
+            align-items: center;
+        }
+        .rightinfo{
+            text-align: left;
+            font-size: 10px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+    </style>
+    <body class="body">
+    <h1 align="center">TECHFEST2K25</h1>
+    <div class="blue"></div>
+    <div class="button"><div class="register">REGISTER NOW</div></div>
+    <div class="mainsection">
+    <div class="grid" >
+        <div>CREATE</div>
+        <div>COLLABORATE</div>
+        <div>INNOVATE</div>
+        <div>TECHNOLOGY</div>
+    </div>  
+    <div class="rightinfo"><h1>It gives me immense pleasure to welcome you all to our Society’s Tech Fest – a celebration of innovation, creativity, and cutting-edge technology.
+        This fest is not just about competitions and exhibits, but also about learning, collaborating, and pushing boundaries.
+        From coding battles to tech quizzes, workshops to project expos – we have something exciting for every tech enthusiast.
+        A big shoutout to all the participants, volunteers, and organizers for their hard work and passion.
+        Let’s make this event not just a fest, but a memory to cherish.
+        So gear up, dive in, and let the tech magic begin!
+        Thank you and enjoy the fest!</h1></div>
+    </div>
+   </body>
+    </html>
